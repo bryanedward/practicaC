@@ -14,7 +14,7 @@ namespace classes
                 decimal balance = 0;
                 foreach (var item in ListTransaction)
                 {
-                    balance += item.Amount;
+                    balance += item.Cantidad;
                 }
                 return balance;
         } }
@@ -22,18 +22,22 @@ namespace classes
         
         public BankAccount(String Owner, Decimal Balance){
             this.Owner = Owner;
+            this.Number = accountNumberSeed.ToString();
+            accountNumberSeed++;
+            Console.WriteLine(accountNumberSeed);
+            MakeDispost(Balance, DateTime.Now, "Inicio de balance");
         }
         
-        public void MakeDispost(decimal amount, DateTime time, string note)
+        public void MakeDispost(decimal cantidad, DateTime time, string note)
         // hacer depositivo enuna cuenta bancaria
         {
-        if(amount < 0)
+        if(cantidad <= 0)
         {
-            throw new ArgumentOutOfRangeException(nameof(amount), "Amount debe ser positivo");             
+            throw new ArgumentOutOfRangeException(nameof(cantidad), "cantidad debe ser positivo");             
         }
         else
         {
-            var deposit = new Transaction(amount, time, note);
+            var deposit = new Transaction(cantidad, time, note);
             ListTransaction.Add(deposit);
         }
             

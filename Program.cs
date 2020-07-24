@@ -18,7 +18,8 @@ namespace myAppC
         static void Main(string[] args)
         {
             var instant = new BankAccount("edward",10000);
-                Console.WriteLine($"nombre de la cuenta bancariae es {instant.Owner}");
+                Console.WriteLine($"nombre de la cuenta bancariae es {instant.Owner} , {instant.Number}");
+                instant.MakeDispost(0, DateTime.Now, "Friend paid me back");
         }
     }
 }
