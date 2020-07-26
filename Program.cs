@@ -1,5 +1,5 @@
 ﻿using System;
-using classes;
+
 
 namespace myAppC
 {
@@ -17,9 +17,13 @@ namespace myAppC
 
         static void Main(string[] args)
         {
-            var instant = new BankAccount("edward",10000);
-                Console.WriteLine($"nombre de la cuenta bancariae es {instant.Owner} , {instant.Number}");
-                instant.MakeDispost(0, DateTime.Now, "Friend paid me back");
+            // Person   person = new Person{ FirstName = "ed", LastName  = "br"};
+            Person person = new Person("maria","fernanda", "como");
+            person.listItem();
+            // WriteLine($"es un gusto {person.mostrar()}");
+            // WriteLine($"metodo de sobreescribe la clase persona {person}");
+            // pr.Example();
         }
+        
     }
 }
